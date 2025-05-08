@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: '*', // In production, you should specify your frontend domain
+  origin: ['https://bkavinkumarportfolio.onrender.com'], // In production, you should specify your frontend domain
   methods: ['GET', 'POST'],
   credentials: true
 }));
