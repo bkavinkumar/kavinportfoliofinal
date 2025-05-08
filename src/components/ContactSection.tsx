@@ -14,7 +14,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-const BACKEND_URL = 'https://kavin7portfolio.onrender.com'; 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
@@ -50,7 +49,7 @@ export default function ContactSection() {
   const checkServerStatus = async () => {
     try {
       setServerStatus('checking');
-      const response = await fetch('${BACKEND_URL}/api/health', {
+      const response = await fetch('https://kavin7portfolio.onrender.com/api/health', {
         method: 'GET',
       });
       
@@ -89,7 +88,7 @@ export default function ContactSection() {
       console.log("Form submitted:", values);
       
       // Send data to our Nodemailer API
-      const response = await fetch('${BACKEND_URL}/api/send-email', {
+      const response = await fetch('https://kavin7portfolio.onrender.com/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
