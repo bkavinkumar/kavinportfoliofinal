@@ -15,6 +15,7 @@ export default function LikeButton() {
     if (alreadyLiked === "true") {
       setLiked(true);
       setLikeCount(1);
+    }
   }, []);
 
   const handleLike = () => {
