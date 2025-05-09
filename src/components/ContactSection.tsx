@@ -157,7 +157,7 @@ export default function ContactSection() {
                     <PhoneCall className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-bold">Phone</h3>
-                  <a href="tel:+919677123159" className="text-primary hover:underline">
+                  <a href="tel:+919629723159" className="text-primary hover:underline">
                     +91 9629723159
                   </a>
                 </CardContent>
