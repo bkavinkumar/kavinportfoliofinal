@@ -52,7 +52,7 @@ export default function Header() {
                 <Github className="w-5 h-5" />
               </Button>
             </a>
-            <a href="https://www.linkedin.com/in/kavin-kumar-ab456299/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/kavin-kumar-a64565259/" target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="icon" className="rounded-full">
                 <Linkedin className="w-5 h-5" />
               </Button>
