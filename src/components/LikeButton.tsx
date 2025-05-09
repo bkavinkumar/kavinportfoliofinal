@@ -39,30 +39,24 @@ export default function LikeButton() {
   };
 
   return (
-    <div className="relative">
-      <Button 
-        variant={liked ? "default" : "outline"}
-        className={`gap-2 ${liked ? "bg-red-500 hover:bg-red-600 border-red-500" : ""}`}
-        onClick={handleLike}
+    <div className="relative inline-block">
+      <motion.div
+        animate={showAnimation ? { scale: [1, 1.4, 1] } : {}}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
       >
-        <Heart className={`w-4 h-4 ${liked ? "fill-white text-white" : "fill-red-500 text-red-500"}`} />
-        <span>{likeCount}</span>
-      </Button>
-      
-      {/* Instagram-like heart animation */}
-      <AnimatePresence>
-        {showAnimation && (
-          <motion.div 
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 2, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Heart className="w-12 h-12 fill-red-500 text-red-500" />
-          </motion.div>
-        )}
-      </AnimatePresence>
+        <Button
+          variant={liked ? "default" : "outline"}
+          className={`gap-2 ${liked ? "bg-red-500 hover:bg-red-600 border-red-500" : ""}`}
+          onClick={handleLike}
+        >
+          <Heart
+            className={`w-4 h-4 transition-all duration-300 ${
+              liked ? "fill-white text-white" : "fill-red-500 text-red-500"
+            }`}
+          />
+          <span>{likeCount}</span>
+        </Button>
+      </motion.div>
     </div>
   );
 }
