@@ -11,9 +11,10 @@ export default function LikeButton() {
   const [showAnimation, setShowAnimation] = useState(false);
 
   useEffect(() => {
-    // Clear any previously stored like state on page load
-    localStorage.removeItem("portfolio-liked");
-    setLiked(false);
+    const alreadyLiked = localStorage.getItem("portfolio-liked");
+    if (alreadyLiked === "true") {
+      setLiked(true);
+      setLikeCount(1);
   }, []);
 
   const handleLike = () => {
